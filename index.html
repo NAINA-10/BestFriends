@@ -543,11 +543,11 @@
                 <p>Loads of love & hugs! ❤️🤗</p>
                 <div class="voice-note-card">
                     <div class="voice-header">
-                        <span>🎤 Voice Note: Me & Payal</span>
+                        <span>🎤 Voice Note</span>
                         <span style="font-size: 0.8rem; color: #888;">0:00</span>
                     </div>
                     <audio class="styled-audio" controls controlsList="nodownload">
-                        <source src="static/OurVoiceNote.mp3" type="audio/mpeg">
+                        <source src="static/mine.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
@@ -786,12 +786,13 @@
 
             window.location.hash = id;
             // Auto-play music logic
-            const audio = modal.querySelector('audio');
-            if (audio) {
-                audio.play().catch(e => console.log("Auto-play prevented by browser policy"));
+            if (id !== 'modal-ending') {
+                const audio = modal.querySelector('audio');
+                if (audio) {
+                    audio.play().catch(e => console.log("Auto-play prevented by browser policy"));
+                }
             }
         }
-
         function closeModal(id) {
             const modal = document.getElementById(id);
             modal.style.display = 'none';
